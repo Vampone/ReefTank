@@ -1,0 +1,70 @@
+:root {
+  --bg: #e9f3f5;
+  --surface: #ffffff;
+  --ink: #0f2a36;
+  --muted: #47636e;
+  --line: #c7dde3;
+  --link: #0e6e8c;
+  --gold: #d9a514;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #07202c;
+    --surface: #0c2c3b;
+    --ink: #dcedf1;
+    --muted: #9bb9c2;
+    --line: #1d4556;
+    --link: #8fd3e0;
+    --gold: #f2c230;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.6 "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+h1, h2, h3 { font-family: "Bricolage Grotesque", "Figtree", system-ui, sans-serif; line-height: 1.15; margin: 0 0 0.5em; }
+h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 1.6rem; font-weight: 650; margin-top: 2.2em; }
+h3 { font-size: 1.15rem; font-weight: 650; margin-top: 1.6em; }
+p, li { max-width: 68ch; }
+a { color: var(--link); text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--link); }
+a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; border-radius: 2px; }
+
+.nav { max-width: 1040px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; }
+.nav .brand { display: flex; align-items: center; gap: 10px; font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 1.15rem; color: var(--ink); text-decoration: none; margin-right: auto; }
+.nav .brand img { width: 40px; height: 30px; object-fit: cover; border-radius: 6px; }
+.nav a:not(.brand) { text-decoration: none; color: var(--muted); font-weight: 550; }
+.nav a[aria-current="page"] { color: var(--ink); text-decoration: underline; text-decoration-color: var(--gold); }
+
+/* the tank itself is the hero: a framed pane of water with the title floating in it */
+.tank { max-width: 1040px; margin: 4px auto 0; padding: 0 24px; }
+.tank figure { position: relative; margin: 0; border-radius: 18px; overflow: hidden; box-shadow: 0 0 0 1px var(--line), 0 24px 60px -30px rgba(4, 30, 44, 0.55); }
+.tank img { display: block; width: 100%; height: auto; }
+.tank figcaption { position: absolute; left: 0; right: 0; top: 0; padding: clamp(18px, 4vw, 44px) clamp(18px, 4vw, 44px) clamp(40px, 8vw, 90px); color: #f3fbfd; text-shadow: 0 2px 18px rgba(2, 24, 36, 0.6); background: linear-gradient(to bottom, rgba(4, 34, 50, 0.62), rgba(4, 34, 50, 0.32) 60%, rgba(4, 34, 50, 0)); }
+.tank figcaption p { font-size: clamp(1rem, 2vw, 1.25rem); max-width: 34ch; margin: 0; }
+.tank h1 { color: #f6fcfd; }
+
+main { max-width: 1040px; margin: 0 auto; padding: 8px 24px 64px; }
+.lead { font-size: 1.15rem; color: var(--ink); }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin: 1.4em 0 0; padding: 0; list-style: none; }
+.shots li { max-width: none; margin: 0; }
+.shots img { width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 0 0 1px var(--line); }
+.shots span { display: block; margin-top: 8px; color: var(--muted); font-size: 0.95rem; }
+.cast { padding-left: 1.2em; }
+.cast li { margin: 0.25em 0; }
+.steps li { margin: 0.4em 0; }
+.legal { max-width: 760px; }
+.legal p strong { color: var(--ink); }
+.contact { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 22px; max-width: 560px; }
+.contact a { font-weight: 650; font-size: 1.1rem; }
+footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+footer div { max-width: 1040px; margin: 0 auto; padding: 22px 24px 40px; }
+footer p { margin: 0.3em 0; max-width: none; }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
